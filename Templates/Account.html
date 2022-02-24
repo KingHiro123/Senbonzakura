@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %} 
+<title> Account Menu </title>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+    
+{% block content %}
+<link rel="stylesheet" type="text/css" href=" {{ url_for('static', filename='account.css') }}" >
+
+<div class="home_content">
+    <div class="text"> Account List </div>
+    
+    <div class="id-count">
+        {% if count == 0 %}
+        <p>There are no users.</p>
+        {% elif count == 1 %}
+        <p>There is 1 user.</p>
+        {% else %}
+        <p>There are {{ count }} users.</p>
+        {% endif %}
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+          </tr>
+          <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>mary@example.com</td>
+          </tr>
+          <tr>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+
+
+{% endblock %}

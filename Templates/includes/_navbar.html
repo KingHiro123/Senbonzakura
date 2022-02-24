@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"> 
+{% block title%}
+<title> Responsive Sidebar Menu </title>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+    
+    {%block content%}
+    <body>
+        <link rel="stylesheet" type="text/css" href=" {{ url_for('static', filename='navbar.css') }}" >
+        
+        <div class="sidebar">
+            <div class="logo-content">
+                <div class="logo">
+                    <i class="bi bi-snow2"></i>
+                   <div class="logo_name"> Senbonzakura </div> 
+                </div>
+                <i class="bi bi-list" id="btn"></i>
+            </div>
+            <ul class="nav_list">
+                <li>
+                    <a href="#">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </a>
+                    <span id="tooltip">Search</span>
+                </li>
+                <li>
+                    <a href="/">
+                        <i class="bi bi-grid"></i>
+                        <span class="links_name"> Dashboard </span>
+                    </a>
+                    <span id="tooltip">Dashboard</span>
+                </li>
+                <li>
+                    <a href="/account">
+                        <i class="bi bi-person"></i>
+                        <span class="links_name"> User </span>
+                    </a>
+                    <span id="tooltip">User</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-chat-left-text"></i>
+                        <span class="links_name"> Support </span>
+                    </a>
+                    <span id="tooltip">Support</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-clipboard-check"></i>
+                        <span class="links_name"> Inventory </span>
+                    </a>
+                    <span id="tooltip">Inventory</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-graph-up"></i>
+                        <span class="links_name"> Transactions </span>
+                    </a>
+                    <span id="tooltip">Transactions</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-cash-stack"></i>
+                        <span class="links_name"> Rewards </span>
+                    </a>
+                    <span id="tooltip">Rewards</span>
+                </li>
+            </ul>
+            <div class="profile_content">
+                <div class="profile">
+                    <div class="profile_details">
+                       <img src="/static/images/senpai.png" alt="">
+                       <div class="name_job">
+                           <div class="name"> Admin </div>
+                           <div class="job"> Manager </div>
+                       </div>
+                    </div>
+                    <i class="bi bi-box-arrow-in-left" id="log_out"></i>
+                </div>
+            </div>
+        </div>
+
+        {%block scripts%}
+        <script type="text/javascript">
+            let btn = document.querySelector("#btn");
+            let sidebar = document.querySelector(".sidebar");
+            let searchBtn = document.querySelector(".bi-search");
+
+            btn.onclick = function() {
+                sidebar.classList.toggle("active");
+            }
+            searchBtn.onclick = function() {
+                sidebar.classList.toggle("active");
+            }
+        </script>
+        {%endblock%}
+
+    </body>
+    {%endblock%}
+</html>

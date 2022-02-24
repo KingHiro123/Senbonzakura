@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&family=Poppins:wght@200&display=swap');
+
+.home_content {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 104px);
+    left: 104px;
+    transition: all 0.5s ease;
+}
+
+.home_content .text{
+    font-size: 40px;
+    font-weight: 600;
+    color: #1d1b31;
+    margin: 12px;
+}
+
+.sidebar.active ~ .home_content{
+   width: calc(100% - 240px);
+   left: 240px;
+}
