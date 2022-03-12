@@ -1,0 +1,45 @@
+{% block title %}
+<title class=""> Senbonzakura </title>
+<!-- Bootstrap 5.1.2 Icons-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+{% endblock %}
+
+{% block content %}
+{% from "includes/_formHelper.html" import render_field %}
+<link rel="stylesheet" type="text/css" href=" {{ url_for('static', filename='loginres.css') }}" > 
+
+<body>
+    <img class="wave" src="/static/images/cat.gif">
+    <div class="container">
+        <div class="img">
+            <img src="/static/images/undraw_male_avatar_323b.svg" alt="user">
+        </div>
+        <div class="login-content">
+            <form action="POST">
+                <h2 class="title"> Welcome </h2>
+                <div class="input-div one"> 
+                    <div class="i">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+                    <div class="div">
+                        <h5> Username </h5>
+                        {{ form.username(class="form-style") }}
+                    </div>
+                </div>
+                <div class="input-div pass"> 
+                    <div class="i">
+                        <i class="bi bi-lock-fill"></i>
+                    </div>
+                    <div class="div">
+                        <h5> Password </h5>
+                        {{ form.password(class="form-style") }}
+                    </div>
+                </div>
+                <a href="#">Forget Password?</a>
+                <input type="submit" value="Login" class="btn btn-solid"/>
+            </form>
+        </div>
+    </div>
+</body>
+{%endblock%}

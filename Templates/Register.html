@@ -1,0 +1,75 @@
+{% block title %}
+<title class=""> Senbonzakura </title>
+<!-- Bootstrap 5.1.2 Icons-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+{% endblock %}
+
+{% block content %}
+{% from "includes/_formHelper.html" import render_field %}
+<link rel="stylesheet" type="text/css" href=" {{ url_for('static', filename='loginres.css') }}" > 
+
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+
+                <!-- SIGN UP FORM-->
+                <form action="" class="sign-up-form">
+                    <h2 class="title"> Sign Up </h2>
+                    <div class="input-field">
+                        <i class="bi bi-person-fill"></i>
+                        {{ form.username(class="form-style") }}
+                    </div>
+                    <div class="input-field">
+                        <i class="bi bi-envelope-fill"></i>
+                        {{ form.email(class="form-style") }}
+                    </div>
+                    <div class="input-field">
+                        <i class="bi bi-balloon-heart-fill"></i>
+                        {{ form.birthday(class="form-style") }}
+                    </div>
+                    <div class="input-field">
+                        <i class="bi bi-lock-fill"></i>
+                        {{ form.password(class="form-style") }}
+                    </div>
+                    <div class="input-field">
+                        <i class="bi bi-person-fill"></i>
+                        {{ form.confirmpass(class="form-style") }}
+                    </div>
+                    <input type="submit" value="Sign Up" class="btn btn-solid"/>
+                    
+                    <p class="social-text"> Or Sign Up with social platforms</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="bi bi-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </form>    
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3> One of us? </h3>
+                    <p> Banana Banana Banana Banana yeet </p>
+                    <button class="btn btn-transparent" id="sign-up-button"> Sign In</button>
+                </div>
+
+                <img src="/static/images/undraw_welcome_cats_thqn (1).svg" class="images" alt="">
+            </div>
+        </div>
+
+    </div>
+</body>
+{%endblock%}
